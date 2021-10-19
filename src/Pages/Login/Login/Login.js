@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
 import useAuth from '../../../hooks/useAuth';
+import useFirebase from '../../../hooks/useFirebase';
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth;
+    const { signInUsingGoogle } = useContext(AuthContext);
+    console.log(signInUsingGoogle);
+
     return (
         <div>
             <h2 id="login">Please Login</h2>
