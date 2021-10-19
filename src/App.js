@@ -5,6 +5,8 @@ import NotFound from './Pages/Home/NotFound/NotFound';
 import Booking from './Pages/Booking/Booking/Booking';
 import Header from './Pages/Shared/Header/Header';
 import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './Pages/Login/Login/PrivateRoute/PrivateRoute';
+import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
@@ -19,9 +21,13 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/booking/:serviceId">
-              <Booking></Booking>
+            <Route path="/login">
+              <Login></Login>
             </Route>
+
+            <PrivateRoute path="/booking/:serviceId">
+              <Booking></Booking>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
